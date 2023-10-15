@@ -95,9 +95,9 @@ main {
   width: 100%;
 }
 .hero__bmi-form {
-  position: absolute;
-  top: 166px;
-  left: 736px;
+  position: relative;
+  top: 100px;
+  left: 350px;
   width: 564px;
 }
 
