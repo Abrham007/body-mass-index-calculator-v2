@@ -1,27 +1,18 @@
-import React from "react";
-import RadioInput from "./RadioInput";
+import React, { useState } from "react";
+import FieldSetRadio from "./FieldSetRadio";
 
 function App() {
+  const [unit, setUnit] = useState("");
+
+  function changeUnit(event) {
+    const value = event.target.value;
+    setUnit(value);
+  }
   return (
     <div>
       <form class="bmi-form hero__bmi-form">
         <h2 class="bmi-form__h2">Enter your details below</h2>
-        <fieldset class="bmi-form__fieldset">
-          <label class="bmi-form__radio">
-            <RadioInput />
-            Metric
-          </label>
-          <label class="bmi-form__radio">
-            <input
-              type="radio"
-              name="unit"
-              id="imperial"
-              value="imperial"
-              class="bmi-form__radio-input"
-            />
-            Imperial
-          </label>
-        </fieldset>
+        <FieldSetRadio changeUnit={changeUnit} />
         <fieldset class="bmi-form__fieldset bmi-form__fieldset_imperial">
           <fieldset class="bmi-form__fieldset">
             <label class="bmi-form__text bmi-form__text_ft">

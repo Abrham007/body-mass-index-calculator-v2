@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-function RadioInput() {
+function RadioInput(props) {
+  const [unit, setUnit] = useState("");
+
+  function changeUnit(event) {
+    const value = event.target.value;
+    setUnit(value);
+    console.log(unit);
+  }
+
   return (
     <input
+      onClick={changeUnit}
       type="radio"
-      name="unit"
-      id="metric"
-      value="metric"
-      class="bmi-form__radio-input"
-      checked
+      className="bmi-form__radio-input"
+      value={props.value}
     />
   );
 }
