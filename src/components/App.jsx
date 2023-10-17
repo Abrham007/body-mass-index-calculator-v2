@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import FieldSetRadio from "./FieldSetRadio";
+import FieldSetNum from "./FieldSetNum";
 
 function App() {
-  const [unit, setUnit] = useState("");
+  const [unit, setUnit] = useState("metric");
 
   function changeUnit(event) {
     const value = event.target.value;
@@ -12,67 +13,8 @@ function App() {
     <div>
       <form class="bmi-form hero__bmi-form">
         <h2 class="bmi-form__h2">Enter your details below</h2>
-        <FieldSetRadio changeUnit={changeUnit} />
-        <fieldset class="bmi-form__fieldset bmi-form__fieldset_imperial">
-          <fieldset class="bmi-form__fieldset">
-            <label class="bmi-form__text bmi-form__text_ft">
-              Height
-              <br />
-              <input
-                type="number"
-                placeholder="0"
-                class="bmi-form__text-input measurement height-ft"
-              />
-            </label>
-            <label class="bmi-form__text bmi-form__text_in">
-              <br />
-              <input
-                type="number"
-                placeholder="0"
-                class="bmi-form__text-input measurement height-in"
-              />
-            </label>
-          </fieldset>
-          <fieldset class="bmi-form__fieldset">
-            <label class="bmi-form__text bmi-form__text_st">
-              Weight
-              <br />
-              <input
-                type="number"
-                placeholder="0"
-                class="bmi-form__text-input measurement weight-st"
-              />
-            </label>
-            <label class="bmi-form__text bmi-form__text_lbs">
-              <br />
-              <input
-                type="number"
-                placeholder="0"
-                class="bmi-form__text-input measurement weight-lbs"
-              />
-            </label>
-          </fieldset>
-        </fieldset>
-        <fieldset class="bmi-form__fieldset bmi-form__fieldset_metric">
-          <label class="bmi-form__text bmi-form__text_cm">
-            Height
-            <br />
-            <input
-              type="number"
-              placeholder="0"
-              class="bmi-form__text-input measurement height-cm"
-            />
-          </label>
-          <label class="bmi-form__text bmi-form__text_kg">
-            Weight
-            <br />
-            <input
-              type="number"
-              placeholder="0"
-              class="bmi-form__text-input measurement weight-kg"
-            />
-          </label>
-        </fieldset>
+        <FieldSetRadio unit={unit} changeUnit={changeUnit} />
+        <FieldSetNum unit={unit} />
         <div
           class="bmi-form__output bmi-form__output_empty"
           role="presentation"

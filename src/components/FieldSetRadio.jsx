@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import RadioInput from "./RadioInput";
 
 function FieldSetRadio(props) {
+  const clickedObj = {
+    border: "7.5px solid hsla(227, 92%, 58%, 0.15)",
+    backgroundColor: "#345ff6",
+    backgroundClip: "padding-box",
+  };
   return (
     <fieldset className="bmi-form__fieldset">
       <label class="bmi-form__radio">
         <input
+          style={props.unit === "metric" ? clickedObj : null}
           onClick={props.changeUnit}
           type="radio"
           name="unit"
@@ -17,6 +22,7 @@ function FieldSetRadio(props) {
       </label>
       <label className="bmi-form__radio">
         <input
+          style={props.unit === "imperial" ? clickedObj : null}
           onClick={props.changeUnit}
           type="radio"
           name="unit"
