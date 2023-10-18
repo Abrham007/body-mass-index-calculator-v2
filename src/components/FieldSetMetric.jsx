@@ -1,14 +1,26 @@
 import React, { useState } from "react";
 
-function FieldSetMetric() {
-  const [measurement, setMeasurement] = useState({
-    height: "",
-    weight: "",
+function FieldSetMetric(props) {
+  const [metricInput, setMetricInput] = useState({
+    height: 0,
+    weight: 0,
   });
+  const [bmi, setBmi] = useState(0);
 
-  function changeMeasurement(event) {
+  function getMetricInput(event) {
     const { name, value } = event.target;
-    setMeasurement((prevValue) => ({ ...prevValue, [name]: value }));
+    let heightVal = parseInt(metricInput.height);
+    let weightVal = parseInt(metricInput.weight);
+    if (heightVal && weightVal) {
+      // let bmi = Math.round(weightVal / (heightVal / 100) ** 2).toFixed(1);
+
+      setBmi(Math.round(weightVal / (heightVal / 100) ** 2).toFixed(1));
+      props.getBmi(49, heightVal);
+    }
+    setMetricInput((prevValue) => ({
+      ...prevValue,
+      [name]: value,
+    }));
   }
 
   return (
@@ -18,7 +30,7 @@ function FieldSetMetric() {
         <br />
         <input
           name="height"
-          onChange={changeMeasurement}
+          onChange={getMetricInput}
           type="number"
           placeholder="0"
           class="bmi-form__text-input measurement height-cm"
@@ -29,7 +41,7 @@ function FieldSetMetric() {
         <br />
         <input
           name="weight"
-          onChange={changeMeasurement}
+          onChange={getMetricInput}
           type="number"
           placeholder="0"
           class="bmi-form__text-input measurement weight-kg"
