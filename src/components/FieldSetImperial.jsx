@@ -11,18 +11,17 @@ function FieldSetImperial(props) {
   function getImperialInput(event) {
     const { name, value } = event.target;
     setImperialInput((prevValue) => ({ ...prevValue, [name]: value }));
+  }
+  let heightFt = imperialInput.heightFt;
+  let heightIn = imperialInput.heightIn;
+  let weightSt = imperialInput.weightSt;
+  let weightLbs = imperialInput.weightLbs;
 
-    let heightFt = imperialInput.heightFt;
-    let heightIn = imperialInput.heightIn;
-    let weightSt = imperialInput.weightSt;
-    let weightLbs = imperialInput.weightLbs;
-
-    if (heightFt && weightSt && heightIn && weightLbs) {
-      var heightVal = heightFt * 30.48 + heightIn * 2.54;
-      var weightVal = weightSt * 6.35 + weightLbs * 0.453;
-      let bmi = Math.round(weightVal / (heightVal / 100) ** 2).toFixed(1);
-      props.getBmi(bmi, heightVal);
-    }
+  if (heightFt && weightSt && heightIn && weightLbs) {
+    var heightVal = heightFt * 30.48 + heightIn * 2.54;
+    var weightVal = weightSt * 6.35 + weightLbs * 0.453;
+    let bmi = Math.round(weightVal / (heightVal / 100) ** 2).toFixed(1);
+    props.getBmi(bmi, heightVal);
   }
 
   return (

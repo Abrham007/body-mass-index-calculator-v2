@@ -8,7 +8,7 @@ function FieldSetRadio(props) {
   };
   return (
     <fieldset className="bmi-form__fieldset">
-      <label class="bmi-form__radio">
+      <label className="bmi-form__radio">
         <input
           style={props.unit === "metric" ? clickedObj : null}
           onClick={props.changeUnit}
@@ -16,7 +16,7 @@ function FieldSetRadio(props) {
           name="unit"
           id="metric"
           value="metric"
-          class="bmi-form__radio-input"
+          className="bmi-form__radio-input"
         />
         Metric
       </label>
@@ -28,7 +28,7 @@ function FieldSetRadio(props) {
           name="unit"
           id="imperial"
           value="imperial"
-          class="bmi-form__radio-input"
+          className="bmi-form__radio-input"
         />
         Imperial
       </label>

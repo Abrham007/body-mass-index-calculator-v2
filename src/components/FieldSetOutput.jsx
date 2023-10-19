@@ -22,21 +22,24 @@ function FieldSetOutput(props) {
   let highRange = Math.round((props.heightVal / 100) ** 2 * 24.9).toFixed(1);
 
   return props.bmi ? (
-    <div class="bmi-form__output" role="presentation">
-      <p class="bmi-from__bmi-p">
+    <div className="bmi-form__output" role="presentation">
+      <p className="bmi-from__bmi-p">
         Your BMI is...
         <br />
-        <span class="bmi-form__bmi-num">{bmi}</span>
+        <span className="bmi-form__bmi-num">{bmi}</span>
       </p>
-      <p class="bmi-from__weight-p">
+      <p className="bmi-from__weight-p">
         Your BMI suggests you're {bmiClassification}.Your ideal weight is
         between {lowRange} - {highRange}
       </p>
     </div>
   ) : (
-    <div class="bmi-form__output bmi-form__output_empty" role="presentation">
+    <div
+      className="bmi-form__output bmi-form__output_empty"
+      role="presentation"
+    >
       <h2>Welcome!</h2>
-      <p class="bmi-from__bmi-p">
+      <p className="bmi-from__bmi-p">
         Enter your height and weight and you'll see your BMI result here
       </p>
     </div>

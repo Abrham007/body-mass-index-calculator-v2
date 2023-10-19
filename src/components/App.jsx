@@ -11,7 +11,8 @@ function App() {
     setUnit(value);
   }
 
-  const [bmi, setBmi] = useState();
+  const [bmi, setBmi] = useState(0);
+
   const [heightVal, setHeightVal] = useState();
 
   function getBmi(newBmi, newHeight) {
@@ -21,8 +22,8 @@ function App() {
 
   return (
     <div>
-      <form class="bmi-form hero__bmi-form">
-        <h2 class="bmi-form__h2">Enter your details below</h2>
+      <form className="bmi-form hero__bmi-form">
+        <h2 className="bmi-form__h2">Enter your details below</h2>
         <FieldSetRadio unit={unit} changeUnit={changeUnit} />
         <FieldSetNum unit={unit} getBmi={getBmi} />
         <FieldSetOutput bmi={bmi} heightVal={heightVal} />
