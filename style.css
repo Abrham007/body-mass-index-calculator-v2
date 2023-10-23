@@ -1,0 +1,597 @@
+@font-face {
+  font-family: InterFont;
+  src: url(./assets/fonts/static/Inter-SemiBold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: InterFont;
+  src: url(./assets/fonts/static/Inter-Regular.ttf);
+  font-weight: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Gunmetal: #253347;
+  --Dark-Electric-Blue: #5e6e85;
+  --Pure-White: #fff;
+  --Blue: #345ff6;
+  --Gradient-1: linear-gradient(
+    -290deg,
+    rgba(214, 252, 254, 0.5) 0%,
+    #d6e6fe 100%
+  );
+}
+main {
+  background: url(./assets/images/pattern-curved-line-left.svg) no-repeat 1188px
+    749px;
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  font-family: InterFont;
+}
+@media screen and (max-width: 800px) {
+  main {
+    background: none;
+  }
+}
+
+.main__hero {
+  margin: -1px 140px 0px 24px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 1276px;
+  height: 737px;
+}
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  border-radius: 0px 0px 35px 35px;
+  background: var(--Gradient-1);
+  height: 737px;
+  width: 978px;
+  z-index: -1;
+}
+.hero__logo {
+  margin: 75px 0px 0px 116px;
+  height: 64px;
+  width: 64px;
+}
+.hero__text {
+  margin: 127px 0px 0px 116px;
+  width: 564px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.text__h1 {
+  font-size: 64px;
+  color: var(--Gunmetal);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -3.2px;
+  width: 83%;
+}
+.text__h2 {
+  font-size: 48px;
+  line-height: 110%;
+  letter-spacing: -2.4px;
+  width: 100%;
+}
+.text__p {
+  font-size: 16px;
+  color: var(--Dark-Electric-Blue);
+  line-height: 1.5;
+  width: 83%;
+}
+.text__p--full-width {
+  width: 100%;
+}
+.hero__bmi-form {
+  position: absolute;
+  top: 166px;
+  left: 736px;
+  width: 564px;
+}
+
+.bmi-form {
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 16px;
+  background: var(--Pure-White);
+  color: var(--Gunmetal);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}
+.bmi-form__h2 {
+  letter-spacing: -1.2px;
+}
+.bmi-form__fieldset {
+  display: flex;
+  border: none;
+  width: 100%;
+  align-items: stretch;
+  gap: 24px;
+}
+.bmi-form__fieldset_imperial {
+  flex-direction: column;
+}
+.bmi-form__radio {
+  flex: 1;
+
+  font-weight: bold;
+  line-height: 1.5;
+}
+.bmi-form__radio:hover {
+  cursor: pointer;
+}
+.bmi-form__radio-input {
+  vertical-align: middle;
+  margin-right: 18px;
+  appearance: none;
+  height: 31px;
+  width: 31px;
+  border-radius: 50%;
+  border: 1px solid #d8e2e7;
+}
+.bmi-form__radio-input:hover {
+  cursor: pointer;
+  outline: 1px solid var(--Blue);
+}
+/* .bmi-form__radio-input:checked {
+  border: 7.5px solid hsla(227, 92%, 58%, 0.15);
+  background-color: var(--Blue);
+  background-clip: padding-box;
+} */
+.bmi-form__text {
+  position: relative;
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5e6e85;
+}
+.bmi-form__text::after {
+  display: block;
+  position: absolute;
+  top: 45px;
+  right: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--Blue);
+  letter-spacing: -1.2;
+}
+.bmi-form__text_cm::after {
+  content: var(--height-unit, "cm");
+}
+.bmi-form__text_kg::after {
+  content: var(--weight-unit, "kg");
+}
+.bmi-form__text_ft::after {
+  content: "ft";
+}
+.bmi-form__text_in::after {
+  content: "in";
+}
+.bmi-form__text_st::after {
+  content: "st";
+}
+.bmi-form__text_lbs::after {
+  content: "lbs";
+}
+.bmi-form__text-input {
+  color: var(--Gunmetal);
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+  padding: 20px 24px;
+  border-radius: 12px;
+  border: 1px solid #d8e2e7;
+  background-color: var(--Pure-White);
+}
+
+.bmi-form__text-input:hover,
+.bmi-form__text-input:focus {
+  appearance: none;
+  cursor: pointer;
+  outline: 1px solid var(--Blue);
+}
+.bmi-form__text-input::placeholder {
+  opacity: 0.25;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.bmi-form__output {
+  display: flex;
+  padding: 32px;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  color: var(--Pure-White);
+  border-radius: 16px 999px 999px 16px;
+  background: linear-gradient(90deg, #345ff6 0%, #587dff 100%);
+}
+.bmi-form__output_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bmi-form__output_value {
+  display: none;
+}
+.bmi-form__output_empty .bmi-from__bmi-p {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  opacity: 0.8;
+}
+.bmi-from__bmi-p {
+  flex: 1;
+  line-height: 1.5;
+}
+.bmi-form__bmi-num {
+  font-size: 64px;
+  letter-spacing: -3.2px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+.bmi-from__weight-p {
+  flex: 1;
+  padding-right: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 800px) {
+  .main__hero {
+    margin: 0;
+  }
+  .hero {
+    width: 768px;
+    text-align: center;
+  }
+  .hero::after {
+    width: 768px;
+    height: 640px;
+  }
+  .hero__logo {
+    margin: 32px auto 0px;
+    width: 40px;
+    height: 40px;
+  }
+  .hero__text {
+    margin: 40px auto;
+    width: 686px;
+  }
+  .text {
+    gap: 24px;
+  }
+  .text__h1 {
+    margin: auto;
+    font-size: 48px;
+    letter-spacing: -2.4px;
+    width: 50%;
+  }
+  .text__p {
+    width: 100%;
+  }
+  .hero__bmi-form {
+    top: 354px;
+    left: 39px;
+    width: 686px;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 400px) {
+  .hero {
+    width: 375px;
+    height: 1120px;
+  }
+  .hero::after {
+    width: 375px;
+  }
+  .hero__text {
+    margin: 24px auto 48px;
+    width: 327px;
+  }
+  .text__h1 {
+    width: 80%;
+  }
+  .hero__bmi-form {
+    top: 471px;
+    left: 24px;
+    width: 328px;
+  }
+  .bmi-form {
+    padding: 24px;
+    gap: 24px;
+  }
+  .bmi-form__fieldset_metric {
+    flex-direction: column;
+  }
+  .bmi-form__output {
+    border-radius: 16px;
+    align-items: flex-start;
+  }
+  .bmi-form__output_value {
+    flex-direction: column;
+  }
+}
+/* <<---------  results section  -------->> */
+.main__result {
+  width: 1160px;
+  height: 533px;
+  margin: 65px 140px 0px 140px;
+}
+.result {
+  display: flex;
+  gap: 131px;
+  color: var(--Gunmetal);
+}
+.result__img {
+  background: url(./assets/images/image-man-eating.webp) no-repeat 0px 0px /
+    564px 533px;
+  width: 564px;
+  height: 533px;
+}
+.result__text {
+  width: 465px;
+  justify-content: flex-end;
+  margin-bottom: 35px;
+}
+@media screen and (max-width: 800px) {
+  .main__result {
+    width: 841px;
+    height: 411px;
+    margin: 96px 43px 0px 0px;
+  }
+  .result {
+    gap: 75px;
+  }
+  .result__img {
+    background: url(./assets/images/image-man-eating.webp) no-repeat 100% 0px /
+      auto 100%;
+    width: 360.957px;
+    height: 411.09px;
+  }
+  .result__text {
+    width: 331px;
+  }
+  .result__text .text__h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main__result {
+    width: 375px;
+    height: 744.388px;
+    margin: 0px;
+  }
+  .result {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .result__img {
+    background: url(./assets/images/image-man-eating.webp) no-repeat 100% 0px /
+      auto 100%;
+    width: 375px;
+    height: 354.388px;
+  }
+  .result__text {
+    width: 328px;
+    margin: auto;
+  }
+}
+
+/* <<---------  tips section  -------->> */
+.main__tips {
+  margin: 96px 24px 0px 24px;
+  width: 1392px;
+  height: 402px;
+}
+.tips {
+  background: var(--Gradient-1);
+  border-radius: 35px;
+  padding: 72px 117px 96px 116px;
+  display: flex;
+  gap: 32px;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 365px;
+  height: 234px;
+}
+.article__header {
+  margin: 45px 0px 0px 0px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  color: var(--Gunmetal);
+}
+.article__p {
+  margin: 24px 0px 0px 0px;
+  line-height: 1.5;
+  color: var(--Dark-Electric-Blue);
+}
+@media screen and (max-width: 800px) {
+  .main__tips {
+    margin: 95px 0px;
+    width: 768px;
+    height: 503px;
+  }
+  .tips {
+    border-radius: 0px;
+    padding: 60px 43px 60px 39px;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .article {
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+  }
+  .article__img {
+    position: absolute;
+    top: 18px;
+  }
+  .article__header {
+    margin: 0px 0px 24px 104px;
+  }
+  .article__p {
+    margin: 0px 0px 0px 104px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main__tips {
+    margin: 71.61px 0px;
+    width: 375px;
+    height: 879px;
+  }
+  .tips {
+    padding: 56px 28.96px 56px 19.04px;
+  }
+  .article__img {
+    position: static;
+  }
+  .article__header {
+    margin: 32px 0px 0px 0px;
+  }
+  .article__p {
+    margin: 24px 0px 0px 0px;
+  }
+}
+
+/* <<---------  bmi-limitaions section  -------->> */
+.main__bmi-limitaions {
+  margin: 120px 140px 120px 140px;
+  width: 1160px;
+  height: 704px;
+}
+.bmi-limitations {
+  display: flex;
+  background: url(./assets/images/pattern-curved-line-right.svg) no-repeat 165px
+    251px;
+  color: var(--Gunmetal);
+}
+.bmi-limitations__text {
+  position: absolute;
+  width: 564px;
+}
+.card-container {
+  margin-left: 200px;
+  position: relative;
+  width: 961px;
+}
+.card_gender {
+  left: 497px;
+}
+.card_age {
+  top: 264px;
+  left: 199px;
+}
+.card_muscle {
+  top: 264px;
+  left: 596px;
+}
+.card_pregnancy {
+  top: 472px;
+}
+.card_race {
+  top: 472px;
+  left: 397px;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+  width: 365px;
+  border-radius: 16px;
+  background: var(--Pure-White, #fff);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}
+.card__header {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+.card__p {
+  color: var(--Dark-Electric-Blue);
+  line-height: 1.5;
+}
+@media screen and (max-width: 800px) {
+  .main__bmi-limitaions {
+    margin: 96px 43px 95.91px 39px;
+    width: 686px;
+    height: 963px;
+  }
+  .bmi-limitations {
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+  .bmi-limitations__text {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .card-container {
+    margin-left: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "gender age"
+      "muscle pregnancy"
+      "race race";
+    gap: 24px 15px;
+  }
+  .card_gender {
+    grid-area: gender;
+  }
+  .card_age {
+    grid-area: age;
+  }
+  .card_muscle {
+    grid-area: muscle;
+  }
+  .card_pregnancy {
+    grid-area: pregnancy;
+  }
+  .card_race {
+    grid-area: race;
+    justify-self: center;
+  }
+  .card {
+    position: static;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main__bmi-limitaions {
+    margin: 72px 29px 96px 19px;
+    width: 327px;
+    height: 1363px;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
