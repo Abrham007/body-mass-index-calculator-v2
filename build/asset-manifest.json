@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/body-mass-index-calculator-v2/static/js/main.c4c2a735.js",
+    "index.html": "/body-mass-index-calculator-v2/index.html",
+    "main.c4c2a735.js.map": "/body-mass-index-calculator-v2/static/js/main.c4c2a735.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c4c2a735.js"
+  ]
+}
